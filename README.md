@@ -4,7 +4,7 @@ CourseAtlas is a local-first revision workbench for multi-PDF courses. A course 
 
 This repository contains the runnable application, tests and synthetic sample material only. Assessment documents, personal information and real course files are intentionally not included.
 
-**README prose word count:** approximately 806 words.
+**README prose word count:** approximately 776 words.
 
 ## Status
 
@@ -113,10 +113,6 @@ Examples of how I used and changed its output:
 - It drafted report and README structure. I rewrote the report around the literature problem and removed generic disclaimers and assignment meta-commentary.
 
 I checked the result with TypeScript, Vitest/Supertest, a production build, headless Edge runs and real 23- and 92-page PDF decks. AI was not used to fabricate citations, user-test results or evaluation metrics.
-
-## Additional files
-
-No ZIP is required to run the project. `samples/` contains synthetic PDFs; `npm run samples` regenerates them. The assessment report is submitted separately to the university and is not stored in this public repository.
 
 ## Limitations
 
