@@ -1,6 +1,6 @@
 ﻿# CourseAtlas
 
-CourseAtlas is a local-first revision workbench for multi-PDF courses. A course contains lecture PDFs; each PDF becomes a lecture with a three-level review outline (chapter 鈫?section 鈫?knowledge point), bilingual summaries and page-anchored evidence. The assistant answers from the course first and labels every fallback.
+CourseAtlas is a local-first revision workbench for multi-PDF courses. A course contains lecture PDFs; each PDF becomes a lecture with a three-level review outline (chapter → section → knowledge point), bilingual summaries and page-anchored evidence. The assistant answers from the course first and labels every fallback.
 
 This repository contains the runnable application, tests and synthetic sample material only. Assessment documents, personal information and real course files are intentionally not included.
 
@@ -56,7 +56,7 @@ npm start
 
 ## First use
 
-1. Open **Select Model 鈫?Import Model**.
+1. Open **Select Model → Import Model**.
 2. Enter your own OpenAI-compatible endpoint details and API key.
 3. Create a course.
 4. Upload a text-based PDF.
@@ -74,7 +74,7 @@ The API key is encrypted on the server. Do not commit `.env`, `.secrets/`, `data
 - Ask a content question to exercise chunk search.
 - Ask a follow-up such as 鈥淲hat are its limitations?鈥?to exercise memory.
 - Open a source card and check that the original PDF page opens.
-- Use **Regenerate outline 鈫?AI** to replace an outline, or choose local mode.
+- Use **Regenerate outline → AI** to replace an outline, or choose local mode.
 
 ## Technology
 
