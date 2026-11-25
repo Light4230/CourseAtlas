@@ -1,10 +1,10 @@
 ﻿# CourseAtlas
 
-CourseAtlas is a local-first revision workbench for multi-PDF courses. A course contains lecture PDFs; each PDF becomes a lecture with a three-level review outline (chapter → section → knowledge point), bilingual summaries and page-anchored evidence. The assistant answers from the course first and labels every fallback.
+CourseAtlas is a local-first revision workbench for multi-PDF courses. A course contains lecture PDFs; each PDF becomes a lecture with a three-level review outline (chapter 鈫?section 鈫?knowledge point), bilingual summaries and page-anchored evidence. The assistant answers from the course first and labels every fallback.
 
 This repository contains the runnable application, tests and synthetic sample material only. Assessment documents, personal information and real course files are intentionally not included.
 
-**README prose word count:** approximately 580 words.
+**README prose word count:** approximately 698 words.
 
 
 ## Status
@@ -56,7 +56,7 @@ npm start
 
 ## First use
 
-1. Open **Select Model → Import Model**.
+1. Open **Select Model 鈫?Import Model**.
 2. Enter your own OpenAI-compatible endpoint details and API key.
 3. Create a course.
 4. Upload a text-based PDF.
@@ -70,11 +70,11 @@ The API key is encrypted on the server. Do not commit `.env`, `.secrets/`, `data
 ## What to try
 
 - Upload `samples/neural-networks/` and inspect the three-level outline.
-- Ask 鈥淲hat are the main knowledge points in this PPT?鈥?to exercise the outline tools.
+- Ask 閳ユ凡hat are the main knowledge points in this PPT?閳?to exercise the outline tools.
 - Ask a content question to exercise chunk search.
-- Ask a follow-up such as 鈥淲hat are its limitations?鈥?to exercise memory.
+- Ask a follow-up such as 閳ユ凡hat are its limitations?閳?to exercise memory.
 - Open a source card and check that the original PDF page opens.
-- Use **Regenerate outline → AI** to replace an outline, or choose local mode.
+- Use **Regenerate outline 鈫?AI** to replace an outline, or choose local mode.
 
 ## Technology
 
@@ -118,6 +118,16 @@ npm test
 
 The suite contains 16 passing tests covering PDF chunking, outline generation, retrieval, key encryption, the API flow, tool selection, memory, Markdown math and empty-answer retry.
 
+## Development record
+
+- Built the React/Express/SQLite workspace, PDF queue, page-level extraction and source routing.
+- Added model import with AES-256-GCM key encryption and masked keys.
+- Replaced the first page-level outline with a three-level AI outline after real-courseware feedback showed it was too granular; retained a labelled local fallback.
+- Added bilingual summaries, original-PDF page links and the outline editor.
+- Added bounded model-selected read-only tools, recent/summary memory and tool traces after generic and Chinese queries returned no evidence.
+- Fixed an empty-answer failure caused by DeepSeek reasoning tokens consuming the completion budget; final answers now disable thinking and retry once on empty content.
+- Verified with TypeScript, 16 automated tests, a production build and headless Edge checks.
+
 ## AI assistance
 
 The project was developed with assistance from a DeepSeek Harness coding agent using the `deepseek-flash` model. AI was used for code scaffolding, test suggestions, bilingual copy and documentation drafts. I reviewed and revised generated code and prose, and checked the result with TypeScript, Vitest/Supertest, a production build, headless Edge runs and real PDF decks. AI was not used to fabricate citations, user-test results or evaluation metrics.
@@ -125,4 +135,5 @@ The project was developed with assistance from a DeepSeek Harness coding agent u
 ## Limitations
 
 This is not a user study. AI outline quality was checked on a small set of real decks; chat answer quality and live Tavily search were not systematically evaluated. Retrieval is lexical, with a translation fallback for Chinese queries; paraphrase-heavy questions would benefit from embeddings. The AI outline path is capped at 150 pages.
+
 
