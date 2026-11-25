@@ -1,10 +1,10 @@
-﻿# CourseAtlas
+# CourseAtlas
 
 CourseAtlas is a local-first revision workbench for multi-PDF courses. A course contains lecture PDFs; each PDF becomes a lecture with a three-level review outline (chapter 鈫?section 鈫?knowledge point), bilingual summaries and page-anchored evidence. The assistant answers from the course first and labels every fallback.
 
 This repository contains the runnable application, tests and synthetic sample material only. Assessment documents, personal information and real course files are intentionally not included.
 
-**README prose word count:** approximately 813 words.
+**README prose word count:** approximately 806 words.
 
 ## Status
 
@@ -116,9 +116,9 @@ I checked the result with TypeScript, Vitest/Supertest, a production build, head
 
 ## Additional files
 
-No ZIP is required to run the project. `samples/` contains synthetic PDFs; `npm run samples` regenerates them. The assessment report is submitted separately to the university and is not stored in this public repository. Real lecture PDFs, personal details and API keys are not included.
+No ZIP is required to run the project. `samples/` contains synthetic PDFs; `npm run samples` regenerates them. The assessment report is submitted separately to the university and is not stored in this public repository.
 
 ## Limitations
 
-This is not a user study. AI outline quality was checked on a small set of real decks; chat answer quality and live Tavily search were not systematically evaluated. Retrieval is lexical, with a translation fallback for Chinese queries; paraphrase-heavy questions would benefit from embeddings. The AI outline path is capped at 150 pages.
+The evaluation is technical: automated tests, a production build and real course decks. AI outline quality was checked on a small set; chat answer quality and live Tavily search were not systematically evaluated. Retrieval is lexical, with a translation fallback for Chinese queries; paraphrase-heavy questions would benefit from embeddings. The AI outline path is capped at 150 pages.
 
