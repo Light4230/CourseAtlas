@@ -1,0 +1,264 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: light;
+  }
+
+  html,
+  body,
+  #root {
+    height: 100%;
+  }
+
+  body {
+    @apply bg-paper text-ink antialiased;
+    background-image:
+      radial-gradient(circle at 12% 8%, rgba(13, 116, 107, 0.08), transparent 30%),
+      radial-gradient(circle at 88% 2%, rgba(36, 87, 197, 0.06), transparent 26%),
+      linear-gradient(rgba(23, 32, 46, 0.025) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(23, 32, 46, 0.025) 1px, transparent 1px);
+    background-size: auto, auto, 28px 28px, 28px 28px;
+  }
+
+  ::selection {
+    background: rgba(13, 116, 107, 0.18);
+  }
+
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: #c9beaa transparent;
+  }
+
+  *::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background: #c9beaa;
+    border-radius: 999px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  button,
+  input,
+  select,
+  textarea {
+    font: inherit;
+  }
+
+  button:focus-visible,
+  a:focus-visible,
+  input:focus-visible,
+  select:focus-visible,
+  textarea:focus-visible {
+    @apply outline-none ring-2 ring-teal-600/45 ring-offset-2 ring-offset-paper;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex min-h-9 items-center justify-center gap-2 rounded-lg px-3 py-1.5 text-sm font-semibold transition
+      disabled:cursor-not-allowed disabled:opacity-50;
+  }
+
+  .btn-primary {
+    @apply btn bg-teal-700 text-white shadow-sm hover:bg-teal-800 active:translate-y-px;
+  }
+
+  .btn-secondary {
+    @apply btn border border-line bg-white/80 text-ink hover:border-ink/25 hover:bg-white active:translate-y-px;
+  }
+
+  .btn-ghost {
+    @apply btn text-muted hover:bg-ink/[0.05] hover:text-ink;
+  }
+
+  .btn-danger {
+    @apply btn bg-red-700 text-white hover:bg-red-800 active:translate-y-px;
+  }
+
+  .btn-icon {
+    @apply inline-flex h-8 w-8 items-center justify-center rounded-lg text-muted transition
+      hover:bg-ink/[0.06] hover:text-ink disabled:pointer-events-none disabled:opacity-40;
+  }
+
+  .input {
+    @apply w-full rounded-lg border border-line bg-white/90 px-3 py-2 text-sm text-ink shadow-sm
+      placeholder:text-muted/60 focus:border-teal-600 focus:outline-none focus:ring-2 focus:ring-teal-600/20;
+  }
+
+  .label {
+    @apply mb-1.5 block text-xs font-semibold uppercase tracking-[0.08em] text-muted;
+  }
+
+  .card {
+    @apply rounded-xl border border-line/90 bg-white/85 shadow-card backdrop-blur-sm;
+  }
+
+  .chip {
+    @apply inline-flex items-center gap-1.5 rounded-full border border-line bg-white/70 px-2 py-1 text-[11px] font-medium text-muted;
+  }
+
+  .badge {
+    @apply inline-flex items-center gap-1 rounded-full px-2.5 py-1 text-[11px] font-semibold leading-none;
+  }
+
+  .section-label {
+    @apply text-[11px] font-bold uppercase tracking-[0.13em] text-muted;
+  }
+
+  .prose-answer {
+    @apply whitespace-pre-wrap break-words text-[13.5px] leading-6 text-ink;
+  }
+
+  .markdown-body {
+    @apply min-w-0 max-w-full break-words text-[13.5px] leading-6 text-ink;
+    overflow-x: auto;
+  }
+
+  .markdown-body > :first-child {
+    margin-top: 0;
+  }
+
+  .markdown-body > :last-child {
+    margin-bottom: 0;
+  }
+
+  .markdown-body p {
+    @apply my-2;
+  }
+
+  .markdown-body strong {
+    @apply font-semibold text-ink;
+  }
+
+  .markdown-body ul {
+    @apply my-2 list-disc space-y-1 pl-5;
+  }
+
+  .markdown-body ol {
+    @apply my-2 list-decimal space-y-1 pl-5;
+  }
+
+  .markdown-body li > p {
+    @apply my-1;
+  }
+
+  .markdown-body h1,
+  .markdown-body h2,
+  .markdown-body h3,
+  .markdown-body h4 {
+    @apply mb-1.5 mt-3 font-semibold leading-5 text-ink;
+  }
+
+  .markdown-body h1 {
+    @apply text-[16px];
+  }
+
+  .markdown-body h2 {
+    @apply text-[15px];
+  }
+
+  .markdown-body h3,
+  .markdown-body h4 {
+    @apply text-[14px];
+  }
+
+  .markdown-body code {
+    @apply rounded bg-parchment/90 px-1 py-0.5 font-mono text-[12px] text-ink;
+  }
+
+  .markdown-body pre {
+    @apply my-2 overflow-x-auto rounded-lg bg-ink p-3 text-[12px] leading-5 text-white;
+  }
+
+  .markdown-body pre code {
+    @apply bg-transparent p-0 text-inherit;
+  }
+
+  .markdown-body blockquote {
+    @apply my-2 border-l-2 border-teal-700/40 pl-3 text-muted;
+  }
+
+  .markdown-body a {
+    @apply text-teal-800 underline decoration-teal-700/40 underline-offset-2;
+  }
+
+  .markdown-body table {
+    @apply my-2 w-full border-collapse text-[12px];
+  }
+
+  .markdown-body th,
+  .markdown-body td {
+    @apply border border-line px-2 py-1 text-left align-top;
+  }
+
+  .markdown-body th {
+    @apply bg-parchment/60 font-semibold;
+  }
+
+  .markdown-body hr {
+    @apply my-3 border-line;
+  }
+
+  .markdown-body .katex-display {
+    @apply my-2 overflow-x-auto overflow-y-hidden py-1;
+  }
+
+  .markdown-body .katex {
+    font-size: 1em;
+    display: inline-block;
+    max-width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    vertical-align: middle;
+  }
+
+  .markdown-body .katex-display .katex {
+    display: block;
+    max-width: none;
+    overflow: visible;
+  }
+
+  .skeleton {
+    @apply animate-pulse rounded-lg bg-parchment/80;
+  }
+
+  .focus-card {
+    @apply rounded-xl border border-teal-700/20 bg-teal-50/60;
+  }
+
+  .divider {
+    @apply h-px w-full bg-line/80;
+  }
+
+  .source-quote mark,
+  .page-text mark {
+    @apply rounded-sm bg-amber-200/80 px-0.5 text-ink;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .scrollbar-none {
+    scrollbar-width: none;
+  }
+
+  .scrollbar-none::-webkit-scrollbar {
+    display: none;
+  }
+
+  .safe-bottom {
+    padding-bottom: max(0.75rem, env(safe-area-inset-bottom));
+  }
+}

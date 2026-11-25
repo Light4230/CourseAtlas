@@ -1,0 +1,2 @@
+This is a plain-text file used to verify that CourseAtlas rejects non-PDF uploads.
+Please export slides as PDF before uploading.

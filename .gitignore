@@ -1,0 +1,46 @@
+# Dependency trees
+node_modules/
+.npm-cache/
+
+# Build output
+dist/
+coverage/
+
+# Local sandbox recovery records
+.acl-repair/
+.backups/
+
+# Local probes / screenshots produced outside docs
+ui-probe*.png
+ui-chat-*.png
+ui-model-dialog.png
+ui-settings.png
+probe-*.mjs
+probe-*.pdf
+probe-dir/
+probe-node/
+upload-response.json
+outline-test.json
+
+# Runtime data: never commit user uploads, databases, or generated keys
+.env
+.env.*
+!.env.example
+.secrets/
+*.db
+*.db-journal
+*.db-wal
+*.db-shm
+uploads/
+data/
+
+# Test artefacts
+test-results/
+playwright-report/
+*.log
+
+# Editor / OS
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
